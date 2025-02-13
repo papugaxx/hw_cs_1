@@ -63,22 +63,19 @@
             Console.WriteLine("enter a number");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
-            // Перетворюємо число в рядок, щоб визначити кількість цифр
             string numStr = num1.ToString();
             int numDigits = numStr.Length;
 
             int sum = 0;
             int tempNum = num1;
 
-            // Обчислюємо суму цифр, піднесених до степеня кількості цифр
             while (tempNum > 0)
             {
-                int digit = tempNum % 10;  // Отримуємо останню цифру
-                sum += (int)Math.Pow(digit, numDigits);  // Підносимо цифру до степеня
-                tempNum /= 10;  // Відкидаємо останню цифру
+                int digit = tempNum % 10;  
+                sum += (int)Math.Pow(digit, numDigits);  
+                tempNum /= 10;  
             }
 
-            // Перевірка на число Армстронга
             if (sum == num1)
             {
                 Console.WriteLine($"{num1} is an Armstrong number.");
